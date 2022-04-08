@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest{
 
-    @Test
+    @Test(description = "Authorization check")
     public void login() {
         loginPage.open();
         loginPage.login(USER, PASSWORD);
