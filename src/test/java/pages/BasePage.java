@@ -11,8 +11,8 @@ public class BasePage {
 
     WebDriver driver;
     WebDriverWait wait;
-    String loginUrl = "https://teachmeskills6.my.salesforce.com";
-    String baseUrl = "https://teachmeskills6.lightning.force.com/lightning";
+    String loginUrl = "https://teachmeskills.my.salesforce.com/";
+    String baseUrl = "https://teachmeskills.lightning.force.com/lightning";
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -27,3 +27,5 @@ public class BasePage {
         };
     }
 }
+
+//https://teachmeskills6.lightning.force.com/lightning/o/Account/list?filterName=Recent

@@ -19,4 +19,13 @@ public class DropDown {
                 .click();
         driver.findElement(By.cssSelector(String.format("a[title=%s]", options))).click();
     }
+
+    public void selectContact(String optional){
+        driver.findElement(By.xpath
+                (String.format("//label[text()='%s']//..//..//div/button", label))
+        ).click();
+        driver.findElement(By.xpath(String.format("//span[text()='%s']", optional))).click();
+
+    }
+
 }

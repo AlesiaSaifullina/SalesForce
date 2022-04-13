@@ -28,17 +28,17 @@ public class NewContactModal extends BasePage {
                        String email, String title, String fax, String typeLeadSource, String text,
                        String accountName) {
 
-        new Input(driver, "First Name").write(firstName);
-        new Input(driver, "Last Name").write(lastName);
-        new Input(driver, "Phone").write(phone);
-        new Input(driver, "Mobile").write(mobile);
-        new DropDown(driver, "Salutation").select(typeSalutation);
-        new Input(driver, "Email").write(email);
-        new Input(driver, "Title").write(title);
-        new Input(driver, "Fax").write(fax);
-        new DropDown(driver, "Lead Source").select(typeLeadSource);
+        new Input(driver, "First Name").writeContact(firstName);
+        new Input(driver, "Last Name").writeContact(lastName);
+        new Input(driver, "Phone").writeContact(phone);
+        new Input(driver, "Mobile").writeContact(mobile);
+        new DropDown(driver, "Salutation").selectContact(typeSalutation);
+        new Input(driver, "Email").writeContact(email);
+        new Input(driver, "Title").writeContact(title);
+        new Input(driver, "Fax").writeContact(fax);
+        new DropDown(driver, "Lead Source").selectContact(typeLeadSource);
         new TextArea(driver, "Mailing Street").writeDescriptionOfContact(text);
-        new Input(driver, "Account Name").write(accountName);
+        new Input(driver, "Account Name").writeContact(accountName);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(SAVE_BUTTON)));
     }
 

@@ -11,7 +11,7 @@ public class HomePage extends BasePage{
         super(driver);
     }
 
-    @Step("Opening home page")
+
     public void open() {
         driver.get(baseUrl + "/page/home");
         waitForPageLoaded();
