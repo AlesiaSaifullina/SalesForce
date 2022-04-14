@@ -18,6 +18,12 @@ public class Input {
                 String.format("//span[text()='%s']/ancestor::div[contains(@class, 'uiInput')]//input", label)
         )).sendKeys(text);
     }
+    public void writeContact (String text){
+        driver.findElement
+                        (By.xpath(String.format("//label[text()='%s']//..//..//div/input", label)))
+                .sendKeys(text);
+    }
+
 
     public void click (){
         driver.findElement(By.xpath

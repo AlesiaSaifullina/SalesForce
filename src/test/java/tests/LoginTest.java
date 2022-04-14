@@ -16,6 +16,6 @@ public class LoginTest extends BaseTest{
 
 
 
-//saifulina.qa-yx5p@force.com
+//saifulina.qa-hydk@force.com
 //alesia1234567890
-//https://teachmeskills6.my.salesforce.com
+//https://gippo2.my.salesforce.com
