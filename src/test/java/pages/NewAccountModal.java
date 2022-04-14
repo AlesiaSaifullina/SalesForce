@@ -1,5 +1,6 @@
 package pages;
 
+import dto.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import wrappers.DropDown;
@@ -22,26 +23,24 @@ public class NewAccountModal extends BasePage{
         driver.findElement(NEW_ACCOUNT).click();
     }
 
-    public void create(String accountName, String parentAccountName, String website, String phone, String fax, String employees,
-                       String revenue, String city, String state, String zipCode, String country, String type,
-                       String industryType, String description, String billingStreet, String shippingStreet) {
-       new Input(driver, "Account Name").write(accountName);
-       new Input(driver, "Parent Account").write(parentAccountName);
-       new Input(driver, "Website").write(website);
-       new Input(driver, "Phone").write(phone);
-       new Input(driver, "Fax").write(fax);
-       new Input(driver, "Billing City").write(employees);
-       new Input(driver, "Annual Revenue").write(revenue);
-       new Input(driver, "Billing City").write(city);
-       new Input(driver, "Billing State/Province").write(state);
-       new Input(driver, "Billing Zip/Postal Code").write(zipCode);
-       new Input(driver, "Billing Country").write(country);
+    public void create(Account account) {
+       new Input(driver, "Account Name").write(account.getAccountName());
+       new Input(driver, "Parent Account").write(account.getParentAccountName());
+       new Input(driver, "Website").write(account.getWebsite());
+       new Input(driver, "Phone").write(account.getPhone());
+       new Input(driver, "Fax").write(account.getFax());
+       new Input(driver, "Billing City").write(account.getEmployees());
+       new Input(driver, "Annual Revenue").write(account.getRevenue());
+       new Input(driver, "Billing City").write(account.getCity());
+       new Input(driver, "Billing State/Province").write(account.getState());
+       new Input(driver, "Billing Zip/Postal Code").write(account.getZipCode());
+       new Input(driver, "Billing Country").write(account.getCountry());
        new Input(driver, "Copy Billing Address to Shipping Address").click();
-       new DropDown(driver, "Type").select(type);
-       new DropDown(driver, "Industry").select(industryType);
-       new TextArea(driver, "Description").writeDescriptionOfAccount(description);
-       new TextArea(driver, "Billing Street").writeDescriptionOfAccount(billingStreet);
-       new TextArea(driver, "Shipping Street").writeDescriptionOfAccount(shippingStreet);
+       new DropDown(driver, "Type").select(account.getType());
+       new DropDown(driver, "Industry").select(account.getIndustryType());
+       new TextArea(driver, "Description").writeDescriptionOfAccount(account.getDescription());
+       new TextArea(driver, "Billing Street").writeDescriptionOfAccount(account.getBillingStreet());
+       new TextArea(driver, "Shipping Street").writeDescriptionOfAccount(account.getShippingStreet());
 
     }
 
