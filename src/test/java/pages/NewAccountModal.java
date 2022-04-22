@@ -1,12 +1,14 @@
 package pages;
 
 import dto.Account;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import wrappers.DropDown;
 import wrappers.Input;
 import wrappers.TextArea;
 
+@Log4j2
 public class NewAccountModal extends BasePage{
 
     public static final By NEW_ACCOUNT = By.cssSelector("a[title=New]");
@@ -24,6 +26,7 @@ public class NewAccountModal extends BasePage{
     }
 
     public void create(Account account) {
+        log.info("Creation of account {}", account);
        new Input(driver, "Account Name").write(account.getAccountName());
        new Input(driver, "Parent Account").write(account.getParentAccountName());
        new Input(driver, "Website").write(account.getWebsite());
